@@ -1,4 +1,5 @@
 import '../../styles/main.css';
+import {getCatalogo} from '../../asyncmocj'
 
 const ItemListContainer = (props) => {
     return(
