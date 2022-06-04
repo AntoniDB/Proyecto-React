@@ -1,6 +1,7 @@
 import '../../styles/main.css';
-import {getCatalogo} from '../../asyncmocj'
+import {getCatalogo} from '../../asyncmock'
 import {useState, useEffect} from 'react'
+import ItemList from '../itemList/itemList';
 
 const ItemListContainer = (props) => {
 
@@ -11,11 +12,12 @@ const ItemListContainer = (props) => {
             setCatalogo(respuesta)
         })
     })
-
+    
     return(
         <div>
             <div className="divSaludo"><h1>{props.saludo}&nbsp;{props.nombre}</h1></div>
-            <div className="card">
+            <div className="container">
+               <ItemList catalogo={catalogo}/>
 
             </div>
         </div>
