@@ -1,21 +1,40 @@
 import '../../styles/main.css';
-import {getCatalogo} from '../../asyncmock'
+import {getCatalogo, getCatalogoByCategoria} from '../../asyncmock'
 import {useState, useEffect} from 'react'
 import ItemList from '../itemList/itemList';
+import {useParams} from 'react-router-dom'  
 
 const ItemListContainer = (props) => {
 
     const [catalogo, setCatalogo] = useState([])
+    const {CategoriaId} = useParams()
+    const [cargando, setCargando] = useState(true)
 
     useEffect(() =>{
-        getCatalogo().then(respuesta=>{
-            setCatalogo(respuesta)
-        })
-    })
+        setCargando(true)
+
+        if(!CategoriaId) {
+            getCatalogo().then(respuesta=>{
+                setCatalogo(respuesta)
+            }).finally(() => {setCargando(false)})
+        }else{
+            getCatalogoByCategoria(CategoriaId).then(respuesta=>{
+                setCatalogo(respuesta)
+            }).finally(() => {setCargando(false)})
+        }
+        
+    },[CategoriaId])
+
+    if(cargando){
+        return(
+            <div className="container"><div className="spin-preloader"></div></div>
+        )
+    }
     
+    console.log(catalogo)
     return(
         <div>
-            <div className="divSaludo"><h1>{props.saludo}&nbsp;{props.nombre}</h1></div>
+            <div className="divSaludo"></div>
             <div className="container">
                <ItemList catalogo={catalogo}/>
 

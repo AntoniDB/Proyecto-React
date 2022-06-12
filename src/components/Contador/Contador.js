@@ -15,9 +15,9 @@ const Contador = () => {
     }
     return (
         <div>
-            <button onClick={suma}>Suma</button>
-            <h1>{ini}</h1>
-            <button onClick={resta}>Resta</button>
+            <button onClick={suma} className="detalle-btn">+</button>
+            <h2 className="detalle-btn-dat">{ini}</h2>
+            <button onClick={resta} className="detalle-btn">-</button>
         </div>
     )
     
