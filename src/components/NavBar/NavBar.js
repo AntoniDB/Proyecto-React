@@ -12,6 +12,7 @@ const NavBar = () => {
                 <NavLink to='/Categoria/Buttercream' className={({isActive}) => isActive ? 'navItemActivo' : 'navItem'}>Tortas Buttercream</NavLink>
                 <NavLink to='/Categoria/CupCakes' className={({isActive}) => isActive ? 'navItemActivo' : 'navItem'}>CupCakes</NavLink>
                 <NavLink to='/Categoria/Catering' className={({isActive}) => isActive ? 'navItemActivo' : 'navItem'}>Catering</NavLink>
+                <NavLink to='/Categoria/Especial' className={({isActive}) => isActive ? 'navItemActivo' : 'navItem'}>Especial</NavLink>
                 <NavLink to='/' className="navItem">Catálogo</NavLink>
                 <NavLink to='/' className="navItem">Simulador de presupuestos</NavLink>
             </div>

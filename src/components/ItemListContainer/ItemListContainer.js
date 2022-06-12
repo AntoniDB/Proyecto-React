@@ -36,7 +36,8 @@ const ItemListContainer = (props) => {
         <div>
             <div className="divSaludo"></div>
             <div className="container">
-               <ItemList catalogo={catalogo}/>
+               {catalogo.length > 0 ? <ItemList catalogo={catalogo}/> : <div className="error-catal-vacio">No hay productos</div>}
+               
 
             </div>
         </div>
