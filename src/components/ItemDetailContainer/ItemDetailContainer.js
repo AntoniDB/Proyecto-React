@@ -9,19 +9,19 @@ const ItemDetailContainer = () => {
     const {CatalogoId} = useParams()
     const [cargando, setCargando] = useState(true)
 
-    console.log(CatalogoId+'url')
+    
     
     useEffect(() =>{
         setCargando(true)
         getCatalogoById(CatalogoId).then(respuesta => {setCatalogo(respuesta)}).finally(() => {setCargando(false)})
-    },[])
+    },[CatalogoId])
     
     if(cargando){
         return(
             <div className="container"><div className="spin-preloader"></div></div>
         )
     }
-    console.log(catalogo)
+    
 
     return(
         <>
