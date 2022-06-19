@@ -198,10 +198,18 @@
     color: #666666;
 }
 .detalle-tit-desc{
-    margin: 5px;
+    margin: 10px;
+    text-align: justify;
     font-size: 1rem;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #006D77;
+}
+.detalle-prod-agrega{
+    margin: 3px;
+    font-size: 0.8rem;
+    font-style: italic;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #0499a7;
 }
 .detalle-btn{
     position: relative;
@@ -268,14 +276,14 @@
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
-    background-color: #E29578;
-    color: #FFDDD2;
+    background-color: #FFDDD2;
+    color: #E29578;
     border: none;
     border-radius: 4px;
 }
 .btnAgregarCarro:hover {
-    background-color: #FFDDD2;
-    color: #E29578;
+    background-color: #E29578;
+    color: #FFDDD2;
 }
 .btnTerminarCompra{
     position: relative;
