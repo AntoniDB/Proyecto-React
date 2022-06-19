@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
 
     return(
         <>
-            <h3>Detalle de Producto</h3>
+            <h3 className="tituloComponente">Detalle de Producto</h3>
             <ItemDetail {...catalogo}/>       
         </>
     )

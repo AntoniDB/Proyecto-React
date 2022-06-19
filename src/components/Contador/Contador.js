@@ -1,10 +1,10 @@
 import {useState} from 'react'
 
-const Contador = () => {
-    const [ini, setIni] = useState(0)
+const Contador = ({agrega,stock}) => {
+    const [ini, setIni] = useState(1)
 
     const suma = () =>{
-        if (ini<10){
+        if ((ini<10)&(ini<stock)){
         setIni(ini + 1)
         }
     }
@@ -14,11 +14,16 @@ const Contador = () => {
         }
     }
     return (
-        <div>
-            <button onClick={suma} className="detalle-btn">+</button>
+        <>
+        <div className="container">
+        <button onClick={suma} className="detalle-btn">+</button>
             <h2 className="detalle-btn-dat">{ini}</h2>
             <button onClick={resta} className="detalle-btn">-</button>
         </div>
+        <div>
+            <button onClick={() => agrega(ini)} className="btnAgregarCarro">Agregar al Carrito</button>
+        </div>
+        </>
     )
     
 }

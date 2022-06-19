@@ -74,9 +74,11 @@
     border: none;
     border-radius: 4px;
 }
-.divSaludo{
-    text-align: center;
-    color: #E29578;
+.tituloComponente{
+    margin: 10px;
+    font-size: 1.1rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #747373;
 }
 
 /*CONTAINER*/
@@ -217,6 +219,7 @@
     border-radius: 6px;
 }
 .detalle-btn-dat{
+    display: inline;
     margin: 1px;
     font-size: 1rem;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -253,3 +256,65 @@
     
 }
 /*CARGA*/
+/*BOTON*/
+.btnAgregarCarro{
+    position: relative;
+    float: left;
+    margin: 2px;
+    padding: 8px;
+    font-size: 0.8em;
+    font-weight: 600;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #E29578;
+    color: #FFDDD2;
+    border: none;
+    border-radius: 4px;
+}
+.btnAgregarCarro:hover {
+    background-color: #FFDDD2;
+    color: #E29578;
+}
+.btnTerminarCompra{
+    position: relative;
+    float: left;
+    margin: 2px;
+    padding: 8px;
+    font-size: 0.8em;
+    font-weight: 600;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #006D77;
+    color: #83C5BE;
+    border: none;
+    border-radius: 4px;
+}
+.btnTerminarCompra:hover{
+    background-color: #49a8b1;
+    color: #1e615a;
+}
+.btnEliminarCompra{
+    position: relative;
+    float: left;
+    margin: 2px;
+    padding: 8px;
+    font-size: 0.8em;
+    font-weight: 600;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #b36a68;
+    color: #eff0f0;
+    border: none;
+    border-radius: 4px;
+}
+.btnEliminarCompra:hover{
+    background-color: #be4440;
+    color: #eff0f0;
+}
+/*BOTON*/
