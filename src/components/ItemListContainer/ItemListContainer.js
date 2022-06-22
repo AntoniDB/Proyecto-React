@@ -31,7 +31,7 @@ const ItemListContainer = (props) => {
         )
     }
     
-    console.log(catalogo)
+    
     return(
         <div>
             <div className="divSaludo"></div>

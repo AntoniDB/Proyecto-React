@@ -30,6 +30,7 @@
     float: right;
     font-weight: 600;
     color: #E29578;
+    font-size: 1.5em;
 }
 .navTit{
     position: relative;
@@ -225,6 +226,10 @@
     color: #EDF6F9;
     border: none;
     border-radius: 6px;
+}
+.detalle-btn:hover{
+    background-color: #0494a1;
+    color: #cfdadd;
 }
 .detalle-btn-dat{
     display: inline;
