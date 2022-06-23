@@ -22,15 +22,8 @@ export const CarProvider = ({children}) =>{
         return cantidadTotalCart
     }
 
-    const buscaProducto = (productoParaBuscar) =>{
-        const productoEncontrado = cart.find(response => response.Id === productoParaBuscar)
-        let avisoProductoEncontrado = ''
-        if(productoEncontrado){avisoProductoEncontrado = 'Producto ya está Agregado'}else{avisoProductoEncontrado='Agregar Producto'}
-        return avisoProductoEncontrado
-    }
-
     return(
-        <CartContexto.Provider value={{agregaProducto, eliminProducto, obtenerCartCantidad, buscaProducto}}>
+        <CartContexto.Provider value={{agregaProducto, eliminProducto, obtenerCartCantidad  }}>
             {children}
         </CartContexto.Provider>
     )
