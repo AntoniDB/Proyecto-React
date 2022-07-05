@@ -1,15 +1,18 @@
 import Contador from '../Contador/Contador'
 import CartContexto from '../../context/CartContext/CartContext'
 import {Link} from 'react-router-dom'
+import { useNotificacion } from '../Notification/Notification'
 
-import { createContext, useState, useContext } from 'react'
+import { useState, useContext } from 'react'
 
 const ItemDetail = ({Id,Nombre,Precio,Descripcion,Imagen,Categoria, Stock}) =>{
 
     const {agregaProducto} = useContext(CartContexto)
+    const setNotificacion = useNotificacion()
     const [cantidadAgregada, setCantidadAgregada] = useState(0)
-    
+        
     const controlAgregaProducto = (cantidad) => {
+        setNotificacion('succes',`Se Agregó ${cantidad} de ${Nombre} al carrito`,1)
         agregaProducto({Id, Nombre, Precio, cantidad})
         setCantidadAgregada(cantidad)
     }
