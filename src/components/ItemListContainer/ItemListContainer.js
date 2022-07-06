@@ -2,7 +2,9 @@ import '../../styles/main.css';
 import {getCatalogo, getCatalogoByCategoria} from '../../asyncmock'
 import {useState, useEffect} from 'react'
 import ItemList from '../itemList/itemList';
-import {useParams} from 'react-router-dom'  
+import {useParams} from 'react-router-dom'
+import {getDocs, collection, query, where} from 'firebase/firestore'
+import {db} from '../Services/Firebase/index'
 
 const ItemListContainer = (props) => {
 
@@ -12,17 +14,14 @@ const ItemListContainer = (props) => {
 
     useEffect(() =>{
         setCargando(true)
+        const coleccionRef = CategoriaId ? (query(collection(db, 'Catalogo'), where('Categoria','==',CategoriaId))) : (collection(db, 'Catalogo'))
 
-        if(!CategoriaId) {
-            getCatalogo().then(respuesta=>{
-                setCatalogo(respuesta)
-            }).finally(() => {setCargando(false)})
-        }else{
-            getCatalogoByCategoria(CategoriaId).then(respuesta=>{
-                setCatalogo(respuesta)
-            }).finally(() => {setCargando(false)})
-        }
-        
+        getDocs(coleccionRef).then(response =>{
+            const catalogoFirestore = response.docs.map(doc =>{
+                return{id:doc.Id, ...doc.data()}
+            })
+            setCatalogo(catalogoFirestore)
+        }).catch(error =>{console.error(error)}).finally(()=>{setCargando(false)})
     },[CategoriaId])
 
     if(cargando){

@@ -8,7 +8,7 @@ const Notificacion = ({mensaje, severidad}) => {
         right: 5,
         width: 'auto',
         height: 'auto',
-        backgroundColor: severidad === 'error' ? '#E29578' : '#83C5BE',
+        backgroundColor: severidad === 'error' ? '#E29578' : '#5db9b0',
         color: '#EDF6F9',
         fontWeight: 'bold',
         padding: '5px 10px',

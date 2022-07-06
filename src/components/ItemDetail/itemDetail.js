@@ -12,7 +12,7 @@ const ItemDetail = ({Id,Nombre,Precio,Descripcion,Imagen,Categoria, Stock}) =>{
     const [cantidadAgregada, setCantidadAgregada] = useState(0)
         
     const controlAgregaProducto = (cantidad) => {
-        setNotificacion('succes',`Se Agregó ${cantidad} de ${Nombre} al carrito`,1)
+        setNotificacion('succes',`Se Agregó ${cantidad} de ${Nombre} al carrito`,2)
         agregaProducto({Id, Nombre, Precio, cantidad})
         setCantidadAgregada(cantidad)
     }
