@@ -18,9 +18,11 @@ const ItemListContainer = (props) => {
 
         getDocs(coleccionRef).then(response =>{
             const catalogoFirestore = response.docs.map(doc =>{
-                return{id:doc.Id, ...doc.data()}
+                return{Id:doc.Id, ...doc.data()}
             })
+            
             setCatalogo(catalogoFirestore)
+            
         }).catch(error =>{console.error(error)}).finally(()=>{setCargando(false)})
     },[CategoriaId])
 
