@@ -9,20 +9,20 @@ const ItemDetailContainer = () => {
 
     const [catalogo, setCatalogo] = useState('')
     const {CatalogoId} = useParams()
-    const [cargando, setCargando] = useState(true)
-
-    console.log(CatalogoId)
     
+    const [cargando, setCargando] = useState(true)
+       
     useEffect(() =>{
         setCargando(true)
         const DocRef = doc(db, 'Catalogo', CatalogoId)
         getDoc(DocRef).then(response =>{
             
-            const catalogoResponse = {id: response.Id, ...response.data()}
+            const catalogoResponse = {id: response.id, ...response.data()}
             
             setCatalogo(catalogoResponse)
         }).catch(error =>{console.log(error)}).finally(()=>{setCargando(false)})
     },[CatalogoId])
+    
     
     if(cargando){
         return(

@@ -18,7 +18,7 @@ const ItemListContainer = (props) => {
 
         getDocs(coleccionRef).then(response =>{
             const catalogoFirestore = response.docs.map(doc =>{
-                return{Id:doc.Id, ...doc.data()}
+                return{id:doc.id, ...doc.data()}
             })
             
             setCatalogo(catalogoFirestore)

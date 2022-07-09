@@ -5,15 +5,19 @@ import { useNotificacion } from '../Notification/Notification'
 
 import { useState, useContext } from 'react'
 
-const ItemDetail = ({Id,Nombre,Precio,Descripcion,Imagen,Categoria, Stock}) =>{
-
+const ItemDetail = ({id,Nombre,Precio,Descripcion,Imagen,Categoria, Stock}) =>{
+    
     const {agregaProducto} = useContext(CartContexto)
     const setNotificacion = useNotificacion()
     const [cantidadAgregada, setCantidadAgregada] = useState(0)
-        
+    
+    // useEffect(() =>{
+    //     setAvisoAgregado(productoBuscado)
+    // })
+   
     const controlAgregaProducto = (cantidad) => {
         setNotificacion('succes',`Se Agregó ${cantidad} de ${Nombre} al carrito`,2)
-        agregaProducto({Id, Nombre, Precio, cantidad})
+        agregaProducto({id, Nombre, Precio, cantidad})
         setCantidadAgregada(cantidad)
     }
    
@@ -30,7 +34,7 @@ const ItemDetail = ({Id,Nombre,Precio,Descripcion,Imagen,Categoria, Stock}) =>{
                     <div className="detalle-precio">S/.&nbsp;{Precio}</div>
                     <div className="detalle-tit-desc">{Descripcion}</div>
                     
-                    {cantidadAgregada === 0 ? <Contador agrega={controlAgregaProducto} stock={Stock}/> : <Link to='/Cart' className="btnTerminarCompra">Terminar Compra</Link>}
+                    {cantidadAgregada === 0 ? <Contador agrega={controlAgregaProducto} stock={Stock}/> : <Link to='/Carrito/' className="btnTerminarCompra">Terminar Compra</Link>}
                     
                 </div>
             </div>

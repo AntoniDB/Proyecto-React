@@ -4,7 +4,7 @@ import {memo} from 'react'
 const ItemList = ({catalogo}) =>{
     return(
         <>
-            {catalogo.map(catal =><Item key={catal.Id}{...catal}/>)}
+            {catalogo.map(catal => <Item key={catal.id} {...catal}/>)}
         </>
     )
 

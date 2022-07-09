@@ -5,7 +5,7 @@ const Notificacion = ({mensaje, severidad}) => {
     const EstiloNotificacion = {
         position: 'absolute',
         top: 100,
-        right: 5,
+        right: 50,
         width: 'auto',
         height: 'auto',
         backgroundColor: severidad === 'error' ? '#E29578' : '#5db9b0',
