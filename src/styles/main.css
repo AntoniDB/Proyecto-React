@@ -287,6 +287,9 @@
     color: #E29578;
     border: 1px solid #E29578;
     border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;/*multilinea*/
 }
 .btnAgregarCarro:hover {
     background-color: #E29578;

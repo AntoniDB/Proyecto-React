@@ -21,7 +21,7 @@ const Contador = ({agrega,stock}) => {
             <button onClick={resta} className="detalle-btn">-</button>
         </div>
         <div>
-            <button onClick={() => agrega(ini)} className="btnAgregarCarro">Agregar al Carrito</button>
+            <button onClick={() => agrega(ini)} className="btnAgregarCarro"><ion-icon size="small" name="cart-outline"></ion-icon>Agregar al Carrito</button>
         </div>
         </>
     )
