@@ -4,7 +4,7 @@ const CartContexto = createContext()
 
 export const CarProvider = ({children}) =>{
     const [cart, setCart] = useState([])
-        
+     
     const agregaProducto = (productoParaAgregar) =>{
         if(!cart.some(response => response.id === productoParaAgregar.id)){
             setCart([...cart, productoParaAgregar])
@@ -22,6 +22,16 @@ export const CarProvider = ({children}) =>{
         return cantidadTotalCart
     }
 
+    const obtenerTotal = () =>{
+        let totalCart = 0
+        cart.forEach(response =>{totalCart += response.cantidad * response.Precio})
+        return totalCart
+    }
+
+    const limpiarCarro = () =>{
+        setCart([])
+    }
+
     const buscaProducto = (productoParaBuscar) =>{
         const productoEncontrado = cart.find(response => response.id === productoParaBuscar)
         let avisoProductoEncontrado = ''
@@ -31,7 +41,7 @@ export const CarProvider = ({children}) =>{
 
     
     return(
-        <CartContexto.Provider value={{cart, agregaProducto, eliminProducto, obtenerCartCantidad }}>
+        <CartContexto.Provider value={{cart, agregaProducto, eliminProducto, obtenerCartCantidad, obtenerTotal, limpiarCarro}}>
             {children}
         </CartContexto.Provider>
     )
