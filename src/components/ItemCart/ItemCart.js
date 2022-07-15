@@ -10,6 +10,7 @@ const ItemCart = ({id, Nombre, Precio, cantidad}) =>{
     }
 
     return(
+        <>
         <div className="container">
             <div className="cartDetalle">
                 <div className="itemTitCartDetalle">{Nombre}</div>
@@ -19,6 +20,7 @@ const ItemCart = ({id, Nombre, Precio, cantidad}) =>{
                 <button className="btnEliminarCompra" onClick={handleElimItem}><ion-icon name="trash-outline"></ion-icon>Eliminar</button>
             </div>
         </div>
+        </>
     )
 
 }

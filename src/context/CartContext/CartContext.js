@@ -23,7 +23,7 @@ export const CarProvider = ({children}) =>{
     }
 
     const obtenerTotal = () =>{
-        let totalCart = 0
+        let totalCart = 10
         cart.forEach(response =>{totalCart += response.cantidad * response.Precio})
         return totalCart
     }
@@ -41,7 +41,7 @@ export const CarProvider = ({children}) =>{
 
     
     return(
-        <CartContexto.Provider value={{cart, agregaProducto, eliminProducto, obtenerCartCantidad, obtenerTotal, limpiarCarro}}>
+        <CartContexto.Provider value={{cart, agregaProducto, eliminProducto, obtenerCartCantidad, obtenerTotal, limpiarCarro, buscaProducto}}>
             {children}
         </CartContexto.Provider>
     )

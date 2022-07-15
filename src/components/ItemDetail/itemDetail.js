@@ -3,18 +3,16 @@ import CartContexto from '../../context/CartContext/CartContext'
 import {Link} from 'react-router-dom'
 import { useNotificacion } from '../../Notification/Notification'
 
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 
 const ItemDetail = ({id,Nombre,Precio,Descripcion,Imagen,Categoria, Stock}) =>{
     
-    const {agregaProducto} = useContext(CartContexto)
+    const {agregaProducto,buscaProducto} = useContext(CartContexto)
+    const productoBuscado = buscaProducto(id)
     const setNotificacion = useNotificacion()
     const [cantidadAgregada, setCantidadAgregada] = useState(0)
     
-    // useEffect(() =>{
-    //     setAvisoAgregado(productoBuscado)
-    // })
-   
+    
     const controlAgregaProducto = (cantidad) => {
         setNotificacion('succes',`Se Agregó ${cantidad} de ${Nombre} al carrito`,2)
         agregaProducto({id, Nombre, Precio, cantidad})
@@ -33,6 +31,7 @@ const ItemDetail = ({id,Nombre,Precio,Descripcion,Imagen,Categoria, Stock}) =>{
                     <div className="detalle-tit-sec">{Nombre}</div>
                     <div className="detalle-precio">S/.&nbsp;{Precio}</div>
                     <div className="detalle-tit-desc">{Descripcion}</div>
+                    <div className="detalle-prod-agrega">{productoBuscado}</div>
                     
                     {cantidadAgregada === 0 ? <Contador agrega={controlAgregaProducto} stock={Stock}/> : <Link to='/Carrito/' className="btnTerminarCompra">Terminar Compra</Link>}
                     
