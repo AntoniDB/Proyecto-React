@@ -3,7 +3,7 @@ import {getCatalogoById} from '../../asyncmock'
 import ItemDetail from '../ItemDetail/itemDetail'
 import {useParams} from 'react-router-dom'
 import {getDoc, doc} from 'firebase/firestore'
-import {db} from '../Services/Firebase/index'
+import {db} from '../../Services/Firebase/index'
 
 const ItemDetailContainer = () => {
 

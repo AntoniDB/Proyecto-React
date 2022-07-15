@@ -1,7 +1,7 @@
 import Contador from '../Contador/Contador'
 import CartContexto from '../../context/CartContext/CartContext'
 import {Link} from 'react-router-dom'
-import { useNotificacion } from '../Notification/Notification'
+import { useNotificacion } from '../../Notification/Notification'
 
 import { useState, useContext } from 'react'
 

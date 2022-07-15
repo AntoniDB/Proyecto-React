@@ -6,7 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import CarListContainer from './components/CarListContainer/CarListContainer'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { CarProvider } from './context/CartContext/CartContext'
-import {NotificacionProvider} from './components/Notification/Notification'
+import {NotificacionProvider} from './Notification/Notification'
 
 function App() {
   

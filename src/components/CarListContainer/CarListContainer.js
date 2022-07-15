@@ -3,9 +3,9 @@ import ItemCart from '../ItemCart/ItemCart'
 import {useState, useContext} from 'react'
 
 
-import {useNotificacion} from '../Notification/Notification'
+import {useNotificacion} from '../../Notification/Notification'
 import {addDoc, collection, writeBatch, getDocs, query, where, documentId} from 'firebase/firestore'
-import {db} from '../Services/Firebase/index'
+import {db} from '../../Services/Firebase/index'
 
 const CarListContainer = () =>{
 
