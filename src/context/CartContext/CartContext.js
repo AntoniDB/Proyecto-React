@@ -4,13 +4,15 @@ const CartContexto = createContext()
 
 export const CarProvider = ({children}) =>{
     const [cart, setCart] = useState([])
-     
+
+         
     const agregaProducto = (productoParaAgregar) =>{
         if(!cart.some(response => response.id === productoParaAgregar.id)){
             setCart([...cart, productoParaAgregar])
         }
     }
 
+      
     const eliminProducto = (productoParaEliminar) =>{
         const carSinProducto = cart.filter(response => response.id !== productoParaEliminar)
         setCart(carSinProducto)

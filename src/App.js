@@ -5,6 +5,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import CarListContainer from './components/CarListContainer/CarListContainer'
 import OrdenCompra from './components/OrdenCompra/OrdenCompra'
+import CartFormCli from './components/CartFormCli/CartFormCli'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { CarProvider } from './context/CartContext/CartContext'
 import {NotificacionProvider} from './Notification/Notification'
@@ -22,7 +23,8 @@ function App() {
             <Route path='/Categoria/:CategoriaId' element={<ItemListContainer />}/>
             <Route path='/Detalle/:CatalogoId' element={<ItemDetailContainer />}/>
             <Route path='/Carrito/' element={<CarListContainer />}/>
-            <Route path='/Carrito/Generarcompra/' element={<OrdenCompra />}/>
+            <Route path='/Carrito/Generarcompra/' element={<CartFormCli />}/>
+            <Route path='/Carrito/OrdenCompra/:ordenPage' element={<OrdenCompra />}/>
           </Routes>
         </BrowserRouter>
       </CarProvider>

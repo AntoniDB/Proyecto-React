@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import {getCatalogoById} from '../../asyncmock'
 import ItemDetail from '../ItemDetail/itemDetail'
+import {getDetailCatalogo} from '../../Services/Firebase/firestore'
 import {useParams} from 'react-router-dom'
 import {getDoc, doc} from 'firebase/firestore'
 import {db} from '../../Services/Firebase/index'
@@ -14,13 +14,7 @@ const ItemDetailContainer = () => {
        
     useEffect(() =>{
         setCargando(true)
-        const DocRef = doc(db, 'Catalogo', CatalogoId)
-        getDoc(DocRef).then(response =>{
-            
-            const catalogoResponse = {id: response.id, ...response.data()}
-            
-            setCatalogo(catalogoResponse)
-        }).catch(error =>{console.log(error)}).finally(()=>{setCargando(false)})
+        getDetailCatalogo(CatalogoId).then(response =>{setCatalogo(response)}).catch(error =>{console.error(error)}).finally(()=>{setCargando(false)})
     },[CatalogoId])
     
     

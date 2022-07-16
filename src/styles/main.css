@@ -410,7 +410,7 @@
 .frmCarroInput{
     position: relative;
     padding: 8px;
-    margin: 5px;
+    margin: 8px 20px;
     border-radius: 10px;
     border: 1px solid #83C5BE;
     
@@ -419,8 +419,8 @@
     position: relative;
     float: left;
     margin: 5px;
-    padding: 8px;
-    font-size: 0.8em;
+    padding: 10px;
+    font-size: 0.9em;
     font-weight: 600;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-decoration: none;
@@ -464,20 +464,30 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    justify-content: flex-start;
     align-content: center;/*multilinea*/
-    max-width: 150px;
+    max-width: 200px;
     background-color: #fdf2ee;
     border-radius: 10px;
 
 }
 .resumOrdenLabel{
+    margin: 6px 20px;
     position: relative;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 900;
     padding: 8px;
-    margin: 5px;
     border-radius: 10px;
     border: 0px solid #83C5BE;
     
+}
+.listaOrden{
+    list-style: none;
+    justify-content: flex-start;
+    margin: 10px;
+    padding: 30px;
+    font-size: 0.8rem;
+    background-color: #fce2d8;
+    border-radius: 10px;
 }
 /*CARRITO*/

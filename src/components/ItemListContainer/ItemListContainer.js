@@ -1,6 +1,6 @@
 import '../../styles/main.css';
-import {getCatalogo, getCatalogoByCategoria} from '../../asyncmock'
 import {useState, useEffect} from 'react'
+import {getCatalogo} from '../../Services/Firebase/firestore'
 import ItemList from '../itemList/itemList';
 import {useParams} from 'react-router-dom'
 import {getDocs, collection, query, where} from 'firebase/firestore'
@@ -14,18 +14,10 @@ const ItemListContainer = (props) => {
 
     useEffect(() =>{
         setCargando(true)
-        const coleccionRef = CategoriaId ? (query(collection(db, 'Catalogo'), where('Categoria','==',CategoriaId))) : (collection(db, 'Catalogo'))
-
-        getDocs(coleccionRef).then(response =>{
-            const catalogoFirestore = response.docs.map(doc =>{
-                return{id:doc.id, ...doc.data()}
-            })
-            
-            setCatalogo(catalogoFirestore)
-            
-        }).catch(error =>{console.error(error)}).finally(()=>{setCargando(false)})
+        getCatalogo(CategoriaId).then(response =>{setCatalogo(response)}).catch(error =>{console.error(error)}).finally(()=>{setCargando(false)})
     },[CategoriaId])
 
+    console.log(catalogo)
     if(cargando){
         return(
             <div className="container"><div className="spin-preloader"></div></div>
