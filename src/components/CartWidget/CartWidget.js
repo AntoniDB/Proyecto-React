@@ -1,7 +1,7 @@
 import '../../styles/main.css';
 import {useContext} from 'react'
 import CartContexto from '../../context/CartContext/CartContext';
-import {Link, NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 const CartWidget = () => {
 

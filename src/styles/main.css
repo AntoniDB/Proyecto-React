@@ -490,4 +490,71 @@
     background-color: #fce2d8;
     border-radius: 10px;
 }
+.boletaOrden{
+    margin: 10px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;/*multilinea*/
+    max-width: 250px;
+    background-color: #dbd8d6;
+    box-shadow: 0 0 10px rgba(0, 0, 0);
+
+}
+.tarDatosBoletaOrden{
+    justify-content: flex-start;
+    margin: 1px 50px;
+    padding: 1px;
+    font-size: 0.7rem;
+    font-weight: 300;
+    border-radius: 10px;
+}
+
+.datosBoletaOrden{
+    justify-content: flex-start;
+    margin: 5px 50px;
+    padding: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 10px;
+}
+.datosBoletaOrdenId{
+    justify-content: flex-start;
+    margin: 5px 5px;
+    padding: 5px;
+    background-color: #bdbdbd;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 10px;
+}
+.itemBoletaOrden{
+    list-style: none;
+    justify-content: flex-start;
+    margin: 10px 30px;
+    padding: 5px;
+    font-size: 0.8rem;
+    border-radius: 10px;
+}
+
+.titBoleta{
+    justify-content: center;
+    margin: 5px 20px;
+    padding: 5px;
+    font-size: 1.1rem;
+    font-weight: 900;
+    border-radius: 10px;
+}
+.titProBoleta{
+    justify-content: center;
+    margin: 5px 20px;
+    padding: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 10px;
+}
 /*CARRITO*/

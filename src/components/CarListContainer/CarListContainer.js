@@ -1,26 +1,16 @@
 import CartContexto from '../../context/CartContext/CartContext'
-
 import ItemCart from '../ItemCart/ItemCart'
 import {Link} from 'react-router-dom'
-import CartFormCli from '../CartFormCli/CartFormCli'
-import {useState, useContext} from 'react'
+import {useContext} from 'react'
 import {useNotificacion} from '../../Notification/Notification'
-import {addDoc, collection, writeBatch, getDocs, query, where, documentId} from 'firebase/firestore'
-import {db} from '../../Services/Firebase/index'
-
 
 const CarListContainer = () =>{
 
-    const {cart, obtenerTotal, limpiarCarro,obtenerCartCantidad} = useContext(CartContexto)
+    const {cart, obtenerTotal, obtenerCartCantidad} = useContext(CartContexto)
     
     const total = obtenerTotal()
     const canTotal = obtenerCartCantidad()
     
-    const setNotificacion = useNotificacion()
-
-      
-       
-
     return(
         <>
         <div className="detalle-tit">Carro de Compras</div>

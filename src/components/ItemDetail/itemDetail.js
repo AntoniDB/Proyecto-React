@@ -3,7 +3,7 @@ import CartContexto from '../../context/CartContext/CartContext'
 import {Link} from 'react-router-dom'
 import { useNotificacion } from '../../Notification/Notification'
 
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext } from 'react'
 
 const ItemDetail = ({id,Nombre,Precio,Descripcion,Imagen,Categoria, Stock}) =>{
     

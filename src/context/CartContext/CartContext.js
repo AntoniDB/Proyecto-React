@@ -11,7 +11,6 @@ export const CarProvider = ({children}) =>{
             setCart([...cart, productoParaAgregar])
         }
     }
-
       
     const eliminProducto = (productoParaEliminar) =>{
         const carSinProducto = cart.filter(response => response.id !== productoParaEliminar)
@@ -41,7 +40,6 @@ export const CarProvider = ({children}) =>{
         return avisoProductoEncontrado
     }
 
-    
     return(
         <CartContexto.Provider value={{cart, agregaProducto, eliminProducto, obtenerCartCantidad, obtenerTotal, limpiarCarro, buscaProducto}}>
             {children}

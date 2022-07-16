@@ -3,8 +3,6 @@ import {useState, useEffect} from 'react'
 import {getCatalogo} from '../../Services/Firebase/firestore'
 import ItemList from '../itemList/itemList';
 import {useParams} from 'react-router-dom'
-import {getDocs, collection, query, where} from 'firebase/firestore'
-import {db} from '../../Services/Firebase/index'
 
 const ItemListContainer = (props) => {
 
@@ -17,7 +15,6 @@ const ItemListContainer = (props) => {
         getCatalogo(CategoriaId).then(response =>{setCatalogo(response)}).catch(error =>{console.error(error)}).finally(()=>{setCargando(false)})
     },[CategoriaId])
 
-    console.log(catalogo)
     if(cargando){
         return(
             <div className="container"><div className="spin-preloader"></div></div>

@@ -1,41 +1,32 @@
-import React, {Fragment, useState} from 'react';
+import React, {useState} from 'react';
 import CartContexto from '../../context/CartContext/CartContext'
-
-
 import {useNotificacion} from '../../Notification/Notification'
-import ItemCart from '../ItemCart/ItemCart'
-import { useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import {addDoc, collection, writeBatch, getDocs, query, where, documentId} from 'firebase/firestore'
 import {db} from '../../Services/Firebase/index'
 import { useForm } from 'react-hook-form'
-import {Link, Navigate} from 'react-router-dom'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 const CartFormCli = () =>{
     
     const {cart, obtenerTotal, obtenerCartCantidad, limpiarCarro} = useContext(CartContexto)
-    
     const { register, handleSubmit } = useForm();
     const [dato, setDato] = useState([]);
     const total = obtenerTotal()
     const canTotal = obtenerCartCantidad()
     const setNotificacion = useNotificacion()
     const [cargando, setCargando] = useState(false)
-
     
     const ordenPage = useNavigate();
     
-    
-    
-
     const handleInputChange = (event) => {
         setDato({
             ...dato,
             [event.target.name] : event.target.value
         })
     }
-    console.log(dato)
+    
     const limpiarDato = () =>{
         setDato([])
     }
@@ -62,7 +53,6 @@ const CartFormCli = () =>{
         .then(response => {
           response.docs.forEach(doc =>{
             const dataDoc = doc.data()
-
             const cartData = cart.find(car => car.id === doc.id) ///find devuelve todo lo que coincida con ID
             const cartDataCant = cartData.cantidad
 
@@ -81,14 +71,8 @@ const CartFormCli = () =>{
           batch.commit()
           limpiarCarro()
           limpiarDato()
-          setNotificacion('succes',`Se generó su orden correctamente, el ID de orden es ${id}`,3)
-          
+          setNotificacion('succes',`Se generó su orden,ID ${id}`,2)
           ordenPage(`/Carrito/OrdenCompra/${id}`)
-          
-          
-          
-          
-          
         }).catch(error=>{
           if(error.type === 'Sin_Stock'){
             setNotificacion('error',`Producto sin Stock`,3)
@@ -123,7 +107,6 @@ const CartFormCli = () =>{
                             <div className="resumOrdenLabel">Envío: S/10</div>
                             <div className="resumOrdenLabel">Total: S/{total}</div>
                             <input type="submit" className="btnEnviarOrden" value="Finalizar Compra"/>
-                            {/* <button className="btnGenerarOrden" onClick={generaOrden}>Procesar Compra</button> */}
                         </div>
                     </div>
                     <div className="container">

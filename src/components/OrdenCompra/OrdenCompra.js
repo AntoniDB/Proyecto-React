@@ -1,5 +1,5 @@
 import {useState, useEffect, useContext} from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import {getDetalleOrden} from '../../Services/Firebase/firestore'
 import OrdenDetail from '../Orden/OrdenDetail'
 
@@ -15,8 +15,6 @@ const OrdenCompra = () =>{
         
     },[ordenPage])
     
-    console.log(orden)
-
     if(cargando){
         return(
             <div className="container"><div className="spin-preloader"></div></div>
@@ -25,7 +23,7 @@ const OrdenCompra = () =>{
 
     return(
         <>
-        <div>Hola</div>
+        <div className="itemTitCartDetalle">Orden de Compra</div>
        {orden.length > 0 ? <OrdenDetail orden={orden}/> : <div>No hay ordenes</div>}
         
         </>
