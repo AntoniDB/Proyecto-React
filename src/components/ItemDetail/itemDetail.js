@@ -14,9 +14,11 @@ const ItemDetail = ({id,Nombre,Precio,Descripcion,Imagen,Categoria, Stock}) =>{
     
     
     const controlAgregaProducto = (cantidad) => {
-        setNotificacion('succes',`Se Agregó ${cantidad} de ${Nombre} al carrito`,2)
-        agregaProducto({id, Nombre, Precio, cantidad})
-        setCantidadAgregada(cantidad)
+           
+            setNotificacion('succes',`Se Agregó ${cantidad} de ${Nombre} al carrito`,2)
+            agregaProducto({id, Nombre, Precio, cantidad})
+            setCantidadAgregada(cantidad)
+        
     }
    
     return(
@@ -31,9 +33,10 @@ const ItemDetail = ({id,Nombre,Precio,Descripcion,Imagen,Categoria, Stock}) =>{
                     <div className="detalle-tit-sec">{Nombre}</div>
                     <div className="detalle-precio">S/.&nbsp;{Precio}</div>
                     <div className="detalle-tit-desc">{Descripcion}</div>
-                    <div className="detalle-prod-agrega">{productoBuscado}</div>
+                    <div className="detalle-tit-desc">Stock&nbsp;&nbsp;&nbsp;{Stock}</div>
+                    {productoBuscado != 'Seleccionar cantidad' ? <div className="detalle-prod-agrega">{productoBuscado}</div> : <div className="detalle-tit-desc">Productos</div>}
                     
-                    {cantidadAgregada === 0 ? <Contador agrega={controlAgregaProducto} stock={Stock}/> : <Link to='/Carrito/' className="btnTerminarCompra">Terminar Compra</Link>}
+                    {cantidadAgregada === 0 ? <Contador agrega={controlAgregaProducto} stock={Stock} id={id}/> : <Link to='/Carrito/' className="btnTerminarCompra">Terminar Compra</Link>}
                     
                 </div>
             </div>

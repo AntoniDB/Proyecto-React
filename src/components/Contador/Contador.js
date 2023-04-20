@@ -1,7 +1,10 @@
-import {useState} from 'react'
+import CartContexto from '../../context/CartContext/CartContext'
+import {useContext ,useState} from 'react'
 
-const Contador = ({agrega,stock}) => {
-    const [ini, setIni] = useState(1)
+const Contador = ({agrega,stock,id}) => {
+    const [ini, setIni] = useState(0)
+    const {buscaProducto} = useContext(CartContexto)
+    const productoBuscado = buscaProducto(id)
 
     const suma = () =>{
         if ((ini<10)&(ini<stock)){
@@ -21,7 +24,7 @@ const Contador = ({agrega,stock}) => {
             <button onClick={resta} className="detalle-btn">-</button>
         </div>
         <div>
-            <button onClick={() => agrega(ini)} className="btnAgregarCarro"><ion-icon size="small" name="cart-outline"></ion-icon>Agregar al Carrito</button>
+            {ini != 0 ? <button onClick={() => agrega(ini)} className="btnAgregarCarro"><ion-icon size="small" name="cart-outline"></ion-icon>Agregar al Carrito</button> : <div className="detalle-prod-agrega">{productoBuscado}</div>}
         </div>
         </>
     )

@@ -36,7 +36,7 @@ export const CarProvider = ({children}) =>{
     const buscaProducto = (productoParaBuscar) =>{
         const productoEncontrado = cart.find(response => response.id === productoParaBuscar)
         let avisoProductoEncontrado = ''
-        if(productoEncontrado){avisoProductoEncontrado = 'Producto ya está Agregado'}else{avisoProductoEncontrado='Agregar Producto'}
+        if(productoEncontrado){avisoProductoEncontrado = 'Producto ya está Agregado'}else{avisoProductoEncontrado='Seleccionar cantidad'}
         return avisoProductoEncontrado
     }
 
